@@ -5,5 +5,5 @@
 html,
 body,
 #root {
-  @apply lg:h-full;
+  @apply bg-gray-50 h-full;
 }

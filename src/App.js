@@ -1,5 +1,6 @@
-import Card from './components/Card';
+import { Card, Header } from './components';
 
+// Data for the 3-tier pricing table
 export const plans = [
   {
     name: 'Hobby',
@@ -36,21 +37,26 @@ export const plans = [
 
 function App() {
   return (
-    <div className="px-6 py-12 lg:h-full lg:flex lg:justify-center lg:items-center">
-      <div className="grid gap-12 lg:gap-0 lg:grid-cols-3">
-        {plans.map(plan => (
-          <div
-            key={plan.name}
-            className={`w-full max-w-lg mx-auto ${
-              plan.featured
-                ? 'order-first lg:order-none lg:transform lg:scale-110 lg:z-10'
-                : 'lg:transform lg:scale-90'
-            }`}
-          >
-            <Card {...plan} />
-          </div>
-        ))}
-      </div>
+    <div className="h-full flex flex-col">
+      <Header />
+
+      {/* Responsive 3-tier pricing table */}
+      <main className="flex-1 px-6 py-12 lg:flex lg:justify-center lg:items-center">
+        <div className="grid gap-12 lg:gap-0 lg:grid-cols-3">
+          {plans.map(plan => (
+            <div
+              key={plan.name}
+              className={`w-full max-w-lg mx-auto ${
+                plan.featured
+                  ? 'order-first lg:order-none lg:transform lg:scale-110 lg:z-10'
+                  : 'lg:transform lg:scale-90'
+              }`}
+            >
+              <Card {...plan} />
+            </div>
+          ))}
+        </div>
+      </main>
     </div>
   );
 }

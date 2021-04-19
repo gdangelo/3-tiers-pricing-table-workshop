@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Button from './Button';
 import { CheckIcon } from '@heroicons/react/solid';
 
 const Card = ({
@@ -48,15 +49,7 @@ const Card = ({
       </div>
 
       {/* CTA */}
-      {featured ? (
-        <button className="whitespace-nowrap w-full py-4 px-8 tracking-wide font-medium bg-indigo-600 hover:bg-indigo-700 transform hover:scale-105 text-white rounded-lg focus:outline-none focus:ring-4 focus:ring-indigo-600 focus:ring-opacity-50 transition-all flex items-center justify-center">
-          Start your trial
-        </button>
-      ) : (
-        <button className="whitespace-nowrap w-full py-4 px-8 bg-white text-indigo-600 rounded-md text-lg font-medium tracking-wide transition-shadow focus:outline-none focus:ring-4 ring-indigo-600 ring-opacity-50">
-          Start your trial
-        </button>
-      )}
+      <Button featured={featured}>Start your trial</Button>
     </div>
   </div>
 );
